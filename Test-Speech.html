@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>....................</title>
+  </head>
+
+  <body>
+
+    <script>
+
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+
+recognition.grammars = speechRecognitionList;
+recognition.continuous = true;
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+
+
+const commands = 
+{
+  "search": term => (setTimeout(() => window.open('http://google.com/search?q='+term), 0.100)),
+  //"search for": term => (searchInput.value = term),
+  "navigate to": destination => navigateTo(destination),
+  "go to": destination => navigateTo(destination),
+  //Add more commands here in same syntax :)
+};
+
+
+function navigateTo(destination)   
+{
+      const destinationLocations = {
+          home: "https://www.google.com",
+          homepage: "https://www.google.com",
+          contact: "https://contacts.google.com",
+          blog: "https://blog.google.com"               };
+      const location = destinationLocations[destination];
+  if (location) {
+    setTimeout(() => window.open(location), 0.100);
+    //window.location.href = location;
+  } else {
+    console.log(`Unknown destination: '${destination}'`);
+  }
+}
+
+
+
+function onSpeechRecognitionEvents() {
+  recognition.addEventListener("result", event =>
+ {
+    if (typeof event.results === "undefined") return;
+    const transcript = event.results[event.results.length - 1][0].transcript
+      .toLowerCase()
+      .trim();
+
+    for (let command in commands) {
+      if (transcript.indexOf(command) === 0) {
+        if (transcript[command.length] === undefined) {
+          commands[command]();
+        } else {
+          const param = transcript
+            .substring(command.length, transcript.length)
+            .trim();
+          commands[command](param);
+        }
+      }
+    }
+ } );
+}
+
+
+//if (SpeechRecognition) {
+  onSpeechRecognitionEvents();
+  recognition.start();
+//}
+
+    </script>
+  </body>
+</html>
