@@ -1,0 +1,26 @@
+"create a map": "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+"create a gis": "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+map: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+
+agriculture: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+leaves: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+
+forestry: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+trees: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+
+"e-governance water": "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+pen: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+
+water: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+river: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+
+tourism: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+"taj mahal": "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+
+urban: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+building: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+
+rural: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+people: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+crowd: "https://bhuvan.nrsc.gov.in/bhuvan_links.php#",
+
